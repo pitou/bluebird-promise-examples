@@ -47,7 +47,21 @@ module.exports = {
         },
 
         "Test 'all()' on array of the same Promisified function": function(test) {
+
             var example = require('./../../src/Collection/All.js');
+
+            var array = ["a", "b", "c"];
+            var expectedTransformedArray = ["c?!", "b?!", "a?!"];
+
+            example.run(array, false, function(transformedArray) {
+                test.deepEqual(transformedArray, expectedTransformedArray);
+                test.done();
+            });
+        },
+
+        "Test 'props()' on object containing Promisified functions": function(test) {
+
+            var example = require('./../../src/Collection/Props.js');
 
             var array = ["a", "b", "c"];
             var expectedTransformedArray = ["c?!", "b?!", "a?!"];

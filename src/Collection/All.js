@@ -25,5 +25,7 @@ export function run(array, debug, callback) {
 
     .then(C.reverseArray)
 
+    .then(C.done)
+
     .then(callback);
 }
