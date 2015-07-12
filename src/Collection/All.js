@@ -1,7 +1,7 @@
 import C from '../Common'
 
-export function run(array, debug, callback)
-{
+export function run(array, debug, callback) {
+
     C.setDebug(debug);
 
     let Promise = require('bluebird');
@@ -14,15 +14,16 @@ export function run(array, debug, callback)
 
     let funcAsync = Promise.promisify(func);
 
-    Promise.map(array, (a) => {
-        return funcAsync(a);
-    })
+    let functions = [];
+    array.forEach((a) => {
+        functions.push(funcAsync(a));
+    });
+
+    Promise.all(functions)
 
     .map(C.addExclamationMark)
 
     .then(C.reverseArray)
-
-    .then(C.done)
 
     .then(callback);
 }

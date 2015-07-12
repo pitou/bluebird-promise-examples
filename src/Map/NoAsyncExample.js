@@ -4,9 +4,9 @@ export function run(array, debug, callback) {
 
     C.setDebug(debug);
 
-    var Promise = require('bluebird');
+    let Promise = require('bluebird');
 
-    var func = (a) => {
+    let func = (a) => {
         return a + "?";
     };
 

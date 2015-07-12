@@ -4,11 +4,11 @@ export function run(array, debug, callback)
 {
     C.setDebug(debug);
 
-    var Promise = require('bluebird');
+    let Promise = require('bluebird');
 
-    var obj = {
-        func: function (a, callback) {
-            setTimeout(function () {
+    let obj = {
+        func: (a, callback) => {
+            setTimeout(() => {
                 callback(null, a + "?");
             }, 1000);
         }
@@ -16,7 +16,7 @@ export function run(array, debug, callback)
 
     Promise.promisifyAll(obj);
 
-    Promise.map(array, function (a) {
+    Promise.map(array, (a) => {
         return obj.funcAsync(a);
     })
 

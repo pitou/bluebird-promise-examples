@@ -7,7 +7,7 @@ traceur.require.makeDefault(function(filename) {
 module.exports = {
 
     "Map" : {
-        "Test Map": function(test) {
+        "Test 'map()' on simple non-Promise function": function(test) {
 
             var example = require('./../../src/Map/PromisifyFunctionExample.js');
 
@@ -20,7 +20,7 @@ module.exports = {
             });
         },
 
-        "Test Map With Promisified Async Function": function(test) {
+        "Test 'map()' on Promisified Async Function": function(test) {
 
             var example = require('./../../src/Map/NoAsyncExample.js');
 
@@ -33,9 +33,21 @@ module.exports = {
             });
         },
 
-        "Test Map With Promisified Object With Async Function": function(test) {
+        "Test 'map()' on Promisified Object with Async Function": function(test) {
 
             var example = require('./../../src/Map/PromisifyObjectExample.js');
+
+            var array = ["a", "b", "c"];
+            var expectedTransformedArray = ["c?!", "b?!", "a?!"];
+
+            example.run(array, false, function(transformedArray) {
+                test.deepEqual(transformedArray, expectedTransformedArray);
+                test.done();
+            });
+        },
+
+        "Test 'all()' on array of the same Promisified function": function(test) {
+            var example = require('./../../src/Collection/All.js');
 
             var array = ["a", "b", "c"];
             var expectedTransformedArray = ["c?!", "b?!", "a?!"];
