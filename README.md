@@ -33,6 +33,7 @@ This is the list of the examples I've written so far:
 * **Map/PromisifyFunction**
 * **Map/PromisifyObjectFunctions**
 * **Collection/All**
+* **Collection/Props**
 
 ### Todo
 
