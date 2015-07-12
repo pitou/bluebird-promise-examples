@@ -35,7 +35,7 @@ module.exports = {
 
         "Test 'map()' on Promisified Object with Async Function": function(test) {
 
-            var example = require('./../../src/Map/PromisifyObjectExample.js');
+            var example = require('./../../src/Map/PromisifyObjectFunctionsExample.js');
 
             var array = ["a", "b", "c"];
             var expectedTransformedArray = ["c?!", "b?!", "a?!"];

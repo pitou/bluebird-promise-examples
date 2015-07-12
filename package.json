@@ -15,15 +15,14 @@
   "author": "Vito Latrofa",
   "license": "ISC",
   "dependencies": {
-    "bluebird": "^2.9.33"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.0",
-    "nodeunit": "^0.9.1",
+    "bluebird": "^2.9.33",
     "traceur": "0.0.90"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/poetcyborg/bluebird-promise-examples.git"
+  "devDependencies": {
+    "nodeunit": "^0.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/poetcyborg/bluebird-promise-examples.git"
   }
 }
